@@ -11,6 +11,9 @@
       const context = new AudioContext();
       const elem = document.querySelector('audio');
       const track = context.createMediaElementSource(elem);
+      track.connect(context.destination);
+    
+      elem.play();
       console.log(track);
   }
   </script>
