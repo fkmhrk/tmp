@@ -9,12 +9,12 @@
   
   <script type="text/javascript"> 
 
-  const playSound = () => {
-    const context = new AudioContext();
-    const elem = document.querySelector('audio');
-    const track = context.createMediaElementSource(elem);
-    track.connect(context.destination);
-    
+  const context = new AudioContext();
+  const elem = document.querySelector('audio');
+  const track = context.createMediaElementSource(elem);
+  track.connect(context.destination);
+
+  const playSound = () => {    
     if (context.state === 'suspended') {
       console.log('will resume');
       context.resume();
@@ -23,11 +23,6 @@
   }
   
   setTimeout(() => {
-    const context = new AudioContext();
-    const elem = document.querySelector('audio');
-    const track = context.createMediaElementSource(elem);
-    track.connect(context.destination);
-
     if (context.state === 'suspended') {
       console.log('will resume');
       context.resume();
