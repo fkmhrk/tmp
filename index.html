@@ -15,15 +15,23 @@
     const track = context.createMediaElementSource(elem);
     track.connect(context.destination);
     
-    const elem = document.querySelector('audio');
     if (context.state === 'suspended') {
-        context.resume();
+      console.log('will resume');
+      context.resume();
     }
     elem.play();
   }
   
   setTimeout(() => {
+    const context = new AudioContext();
     const elem = document.querySelector('audio');
+    const track = context.createMediaElementSource(elem);
+    track.connect(context.destination);
+
+    if (context.state === 'suspended') {
+      console.log('will resume');
+      context.resume();
+    }
     elem.play();
   }, 3000);
   </script>
