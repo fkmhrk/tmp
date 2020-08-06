@@ -15,6 +15,9 @@
 
   const playSound = () => {        
     const elem = document.querySelector('audio');
+    if (context.state === 'suspended') {
+        context.resume();
+    }
     elem.play();
   }
   
