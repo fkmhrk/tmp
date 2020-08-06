@@ -7,13 +7,14 @@
   <!-- sound.mp3 is from https://soundeffect-lab.info/sound/button/ -->
   <audio src="sound.mp3" type="audio/mpeg"></audio>
   
-  <script type="text/javascript">
-  const context = new AudioContext();
-  const elem = document.querySelector('audio');
-  const track = context.createMediaElementSource(elem);
-  track.connect(context.destination);
+  <script type="text/javascript"> 
 
-  const playSound = () => {        
+  const playSound = () => {
+    const context = new AudioContext();
+    const elem = document.querySelector('audio');
+    const track = context.createMediaElementSource(elem);
+    track.connect(context.destination);
+    
     const elem = document.querySelector('audio');
     if (context.state === 'suspended') {
         context.resume();
