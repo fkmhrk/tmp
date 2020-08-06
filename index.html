@@ -4,11 +4,14 @@
 
 <body>
   <button onclick="playSound();">Play</button>
+  <audio src="sound.mp3" type="audio/mpeg"></audio>
   
   <script type="text/javascript">
   const playSound = async () => {
       const context = new AudioContext();
-      console.log(context);
+      const elem = document.querySelector('audio');
+      const track = context.createMediaElementSource(elem);
+      console.log(track);
   }
   </script>
 </body>
