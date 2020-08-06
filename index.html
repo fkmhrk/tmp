@@ -7,15 +7,20 @@
   <audio src="sound.mp3" type="audio/mpeg"></audio>
   
   <script type="text/javascript">
-  const playSound = async () => {
-      const context = new AudioContext();
-      const elem = document.querySelector('audio');
-      const track = context.createMediaElementSource(elem);
-      track.connect(context.destination);
-    
-      elem.play();
-      console.log(track);
+  const context = new AudioContext();
+  const elem = document.querySelector('audio');
+  const track = context.createMediaElementSource(elem);
+  track.connect(context.destination);
+
+  const playSound = async () => {        
+    const elem = document.querySelector('audio');
+    elem.play();
   }
+  
+  setTimeout(() => {
+    const elem = document.querySelector('audio');
+    elem.play();
+  }, 1000);
   </script>
 </body>
 
