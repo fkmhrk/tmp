@@ -4,6 +4,7 @@
 
 <body>
   <button onclick="playSound();">Play</button>
+  <!-- sound.mp3 is from https://soundeffect-lab.info/sound/button/ -->
   <audio src="sound.mp3" type="audio/mpeg"></audio>
   
   <script type="text/javascript">
@@ -20,7 +21,7 @@
   setTimeout(() => {
     const elem = document.querySelector('audio');
     elem.play();
-  }, 1000);
+  }, 3000);
   </script>
 </body>
 
